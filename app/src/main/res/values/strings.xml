@@ -16,4 +16,7 @@
   <string name="server_error_message">Error connecting to the server. Please try again</string>
   <string name="logout">Logout</string>
   <string name="options">Options</string>
+  <string name="dueDate">DueDate</string>
+  <string name="priority">Priority</string>
+  <string name="description">Name</string>
 </resources>

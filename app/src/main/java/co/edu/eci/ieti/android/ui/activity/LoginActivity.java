@@ -57,6 +57,8 @@ public class LoginActivity
                 {
                     try
                     {
+                        System.out.println(R.id.email);
+                        System.out.println(R.id.password);
                         Call<Token> call = retrofitNetwork.getAuthService().login( loginWrapper );
                         Response<Token> response = call.execute();
                         if ( response.isSuccessful() )

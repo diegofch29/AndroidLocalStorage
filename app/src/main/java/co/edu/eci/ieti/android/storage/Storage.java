@@ -1,3 +1,4 @@
+
 package co.edu.eci.ieti.android.storage;
 
 import android.content.Context;
@@ -16,8 +17,7 @@ public class Storage
 
     private final SharedPreferences sharedPreferences;
 
-    public Storage( Context context )
-    {
+    public Storage( Context context ) {
         this.sharedPreferences =
             context.getSharedPreferences( context.getString( R.string.preference_file_key ), Context.MODE_PRIVATE );
     }
@@ -27,8 +27,7 @@ public class Storage
         return sharedPreferences.getString( TOKEN_KEY, null );
     }
 
-    public void saveToken( Token token )
-    {
+    public void saveToken( Token token ) {
         sharedPreferences.edit().putString( TOKEN_KEY, token.getAccessToken() ).apply();
     }
 

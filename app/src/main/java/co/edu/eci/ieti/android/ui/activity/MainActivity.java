@@ -10,7 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import co.edu.eci.ieti.R;
+import co.edu.eci.ieti.android.adapter.TaskAdapter;
 import co.edu.eci.ieti.android.storage.Storage;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -22,6 +26,8 @@ public class MainActivity
 {
 
     private Storage storage;
+    private RecyclerView recyclerView;
+    public TaskAdapter taskAdapter;
 
     @Override
     protected void onCreate( Bundle savedInstanceState )
@@ -110,5 +116,12 @@ public class MainActivity
         DrawerLayout drawer = findViewById( R.id.drawer_layout );
         drawer.closeDrawer( GravityCompat.START );
         return true;
+    }
+
+    private void configureRecyclerView() {
+        recyclerView.setHasFixedSize( true );
+        LinearLayoutManager layoutManager = new LinearLayoutManager( this );
+        recyclerView.setAdapter( taskAdapter );
+        recyclerView.setLayoutManager(layoutManager);
     }
 }
